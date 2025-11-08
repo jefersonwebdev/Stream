@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Stream</string>
+    <string name="bottom_menu_home">Home</string>
+    <string name="bottom_menu_playlist">Playlist</string>
+    <string name="bottom_menu_search">Pesquisar</string>
+    <string name="bottom_menu_account">Perfil</string>
+</resources>
