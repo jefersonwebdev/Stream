@@ -1,100 +1,52 @@
-# 💻 StreamOn PIM VIII: Plataforma de Gestão de Conteúdo
+# Stream App
+![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
+![Android](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)
 
-## Visão Geral do Projeto
+## 📝 Descrição
 
-Este projeto foi desenvolvido como parte do Programa Integrado Multidisciplinar (PIM VIII) e consiste em uma plataforma de *streaming* modular focada na **Gestão de Conteúdo para Criadores**. A solução é dividida em três camadas principais, cobrindo o frontend mobile/desktop, o backend de API e a persistência de dados.
+**Stream** é um protótipo de aplicativo de streaming de mídia para a plataforma Android. O projeto foi desenvolvido para demonstrar a implementação de uma interface de usuário moderna, com navegação fluida entre diferentes seções do aplicativo e o uso de componentes do Material Design.
 
-O objetivo principal é simular um ambiente de gestão de conteúdo semelhante ao **YouTube Studio** para criadores, e um feed de consumo de conteúdo semelhante ao **YouTube Mobile**.
+## ✨ Funcionalidades
 
------
-
-## 🏗️ Arquitetura do Sistema
-
-O projeto adota uma arquitetura de três camadas, utilizando tecnologias modernas da Microsoft e nativas de Android:
-
-### 1\. Backend (API & Dados)
-
-  * **Tecnologia:** **ASP.NET Core Web API (C\#)**.
-  * **Função:** Camada de lógica de negócios, autenticação e gerenciamento de dados.
-  * **Modelos de Dados Principais (Conforme DER e Diagrama de Classes):**
-      * `Criador` (Usuário gestor).
-      * `Conteudo` (Vídeos, Músicas, Podcasts).
-      * `Playlist` e `ItemPlaylist` (Organização de conteúdo).
-  * **Persistência:** Entity Framework Core e SQL Server/SQLite.
-
-### 2\. Frontend (Protótipos de Interface)
-
-#### A. Protótipo do Criador (Studio)
-
-  * **Tecnologia:** **.NET MAUI (C\#)**.
-  * **Plataformas Alvo:** Windows, Android, iOS (Protótipo Desktop focado).
-  * **Funcionalidades Implementadas:**
-      * **Dashboard/Painel de Métricas:** Visualização de estatísticas do canal (Analytics).
-      * **Conteúdo/Gestão:** Visão tabular de todos os conteúdos publicados (como o *Channel Content* do YouTube Studio).
-      * **Upload de Conteúdo:** Formulário para adição de novos vídeos ou mídias.
-
-#### B. Protótipo do Consumidor (Mobile Feed)
-
-  * **Tecnologia:** **Android Nativo (Java e XML)**.
-  * **Plataforma Alvo:** Android Mobile.
-  * **Funcionalidades Implementadas:**
-      * Tela inicial com **`BottomNavigationView`** e **`RecyclerView`**.
-      * Layout de feed de vídeos semelhante ao YouTube, incluindo cabeçalho e filtros (Chips).
-
------
+- **Navegação Principal**: Navegação intuitiva utilizando uma `BottomNavigationView` para alternar entre as telas principais.
+- **Telas**: O aplicativo é composto por quatro seções principais:
+  - 🏠 **Home**: Tela inicial do aplicativo.
+  - 🎶 **Playlist**: Seção para visualização de playlists.
+  - 🔍 **Busca**: Tela para pesquisar conteúdos.
+  - 👤 **Conta**: Espaço para gerenciar o perfil do usuário.
+- **Animações**: Transições de tela personalizadas (`slide-in` e `slide-out`) para uma experiência de usuário mais agradável.
+- **Tema Dinâmico**: O tema do aplicativo se adapta às cores definidas, garantindo consistência visual.
 
 ## 🛠️ Tecnologias Utilizadas
 
-  * **Linguagens:** C\# (para API e .NET MAUI) e Java (para Android Nativo).
-  * **Frameworks:** ASP.NET Core 8.0, .NET MAUI.
-  * **Banco de Dados:** Entity Framework Core.
-  * **Design:** Google Material Design e inspiração no YouTube/YouTube Studio.
-  * **Ferramentas de Desenvolvimento:** Visual Studio e Android Studio.
-
------
+- **Java**: Linguagem de programação principal do projeto.
+- **Android SDK**: Plataforma nativa para desenvolvimento Android.
+- **Bibliotecas AndroidX**:
+  - `AppCompat`: Para garantir compatibilidade com versões mais antigas do Android.
+  - `ConstraintLayout`: Para a criação de layouts flexíveis e eficientes.
+- **Material Components for Android**: Para a implementação de componentes de design modernos, como a `BottomNavigationView`.
 
 ## 🚀 Como Executar o Projeto
 
-### 1\. Executando o Backend (API)
+1.  **Clone o repositório:**
 
-1.  Clone este repositório.
-2.  Abra a solução da API (`StreamOn_API.sln`) no Visual Studio.
-3.  Configure a string de conexão no `appsettings.json` para apontar para seu banco de dados.
-4.  Execute as migrações do Entity Framework Core:
-    ```bash
-    dotnet ef database update
-    ```
-5.  Execute o projeto. O Swagger será aberto em `https://localhost:XXXX/swagger`, exibindo os *endpoints* para `Criadores`, `Conteudos` e `Playlists`.
+2.Abra no Android Studio:◦Abra o Android Studio.◦Selecione Open an existing project.
+◦Navegue até o diretório onde o projeto foi clonado e selecione-o.
+3.Sincronize o Gradle:◦Aguarde o Android Studio sincronizar e baixar todas as dependências do projeto.
+4.Execute o aplicativo:◦Conecte um dispositivo Android ou inicie um emulador.◦Pressione o botão Run 'app' (▶️) na barra de ferramentas.
 
-### 2\. Executando o Frontend (Protótipo Studio .NET MAUI)
+## 📸 Telas
+(Sugestão: Adicione aqui screenshots do seu aplicativo para demonstrar a interface.)
+| Tela Principal (Home)                                 | Tela de Playlist                                 | 
+| ----------------------------------------------------- | ------------------------------------------------ | 
+| (coloque a imagem da tela principal aqui)             | (coloque a imagem da tela de playlist aqui)    |
 
-1.  Abra a solução (`StreamOn_PIM_VIII.sln`) no Visual Studio.
-2.  Defina o projeto `StreamOn_PIM_VIII` como projeto de inicialização.
-3.  Defina o projeto para ser executado no **Windows Machine** (ou Android Emulator).
-4.  **Ajuste:** Atualize a URL da API no código do cliente para a URL do seu *backend* (`https://localhost:XXXX`).
-5.  Execute o projeto.
 
-### 3\. Executando o Frontend (Protótipo Android Nativo)
 
-1.  Abra o projeto Android (a pasta `StreamOnPIMVIII/Android`) no **Android Studio**.
-2.  Deixe o Gradle sincronizar as dependências (certifique-se de que `ConstraintLayout`, `RecyclerView` e `Material` estão no `build.gradle`).
-3.  Selecione um emulador ou dispositivo.
-4.  Execute a `HomeActivity` para visualizar o feed de conteúdo.
-
------
-
-## 📂 Diagramas de Referência
-
-A estrutura de dados e relacionamentos foi baseada nos seguintes diagramas:
-
-### Diagrama Entidade-Relacionamento (DER)
-
-### Diagrama de Classes
-
------
-
-## ✨ Contato
-
-Este projeto foi desenvolvido por [Seu Nome/Nome da Equipe] como requisito para o PIM VIII.
-
-**[Seu Email ou Link do LinkedIn]**
+## 🤝 Como Contribuir
+ Contribuições são sempre bem-vindas! Se você tiver sugestões para melhorar este projeto, por favor, siga estes passos:
+  1.Faça um Fork do projeto.
+  2.Crie uma nova Branch (git checkout -b feature/sua-feature).
+  3.Faça o Commit das suas alterações (git commit -m 'Adiciona sua-feature').
+  4.Envie para a Branch original (git push origin feature/sua-feature).
+  5.Abra um Pull Request.
